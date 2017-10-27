@@ -1,28 +1,25 @@
 set colorcolumn=+1
-set cursorline " highlight current line
+set cursorline                                            " highlight current line
 set expandtab
-set list listchars=tab:»·,trail:·,nbsp:·
 set nobackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set nowrap              " no word-wrap
+set noswapfile
+set nowrap                                                " no word-wrap
 set nowritebackup
-set number
-set ruler         " show the cursor position all the time
-set shiftround
-set shiftwidth=2
-set tabstop=2
-set textwidth=80
-Softtabs, 2 spaces
-" set cursorcolumn                                             " enable vertical line
-set cursorline                                               " enable horizontal line
-set listchars=tab:▸\ ,trail:▫
-set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
+set ruler                                                 " show the cursor position all the time
+" set shiftround
+" set shiftwidth=2
+" set tabstop=2
+" set textwidth=80
+" set softtabstop=4 shiftwidth=4 expandtab                " indentation level 4 spaces. Tabs are not used
+" set cursorcolumn                                        " enable vertical line
+set cursorline                                            " enable horizontal line
+set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 colorscheme zenburn
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 set autoindent
 set autoread
-set autowrite     " Automatically :write before running commands
+set autowrite                                                " Automatically :write before running commands
 set backspace=2                                              " Fix broken backspace in some setups
 set backupcopy=yes                                           " see :help crontab
 set clipboard=unnamed                                        " yank and paste with the system clipboard
@@ -30,16 +27,19 @@ set directory-=.                                             " don't store swapf
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set filetype=on " without this vim emits a zero exit status, later, because of :ft off
-set guifont="Source Code Pro":h12
+set guifont=Inconsolata:h12
 set history=50
-set hlsearch            " highlight search
+set hlsearch                                                 " highlight search
 set ignorecase                                               " case-insensitive search
-set incsearch     " do incremental searching
+set incsearch                                                " do incremental searching
 set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
-set nocompatible        " don't bother with vi compatibility
+" set listchars=trail:▫
+" set list listchars=tab:»·,trail:·,nbsp:·
+set listchars=tab:▸\ ,trail:·,nbsp:·
+set nocompatible                                             " don't bother with vi compatibility
 set number                                                   " show line numbers
-set numberwidth=5
+set numberwidth=7
 set relativenumber
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
@@ -58,11 +58,26 @@ set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 set rtp+=~/.vim/plugged/neocomplete.vim/
 
 call vundle#begin() " install plugins via Vundle
+  Plugin 'airblade/vim-gitgutter'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'mileszs/ack.vim'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
+
+" airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
+
+" ack settings
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
@@ -116,55 +131,104 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-" keyboard shortcuts
+" general key maps
 let mapleader = ','
+nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
+
+" silver searcher, ack
+nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
-nnoremap <leader>a :Ag<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+map <leader>a :cclose<CR>
 
 " in case you forgot to sudo
 " cnoremap w!! %!sudo tee > /dev/null %
-" go specific settings
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" go specific key maps
+autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>rn <Plug>(GoRename)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
 
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 " highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
-# vim-go settings
+" vim-go specific settings
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
-" go specific settings
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
 
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>rn <Plug>(GoRename)
+" silver searcher, ack
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
+" keymap for silversearcher
+" ?    a quick summary of these keys, repeat to close
+" o    to open (same as Enter)
+" O    to open and close the quickfix window
+" go   to preview file, keeping focus on the results
+" t    to open in new tab
+" T    to open in new tab, keeping focus on the results
+" h    to open in horizontal split
+" H    to open in horizontal split, keeping focus on the results
+" v    to open in vertical split
+" gv   to open in vertical split, keeping focus on the results
+" q    to close the quickfix window
+
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:neocomplete#enable_at_startup = 1
 let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 1
+
+
+" gotags support
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
