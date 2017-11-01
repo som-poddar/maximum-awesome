@@ -61,12 +61,14 @@ set rtp+=~/.vim/plugged/neocomplete.vim/
 
 call vundle#begin() " install plugins via Vundle
   Plugin 'airblade/vim-gitgutter'
+  Plugin 'ajh17/VimCompletesMe'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'shougo/neocomplete'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
