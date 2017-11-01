@@ -15,7 +15,7 @@ set ruler                                                 " show the cursor posi
 set cursorline                                            " enable horizontal line
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
-colorscheme zenburn
+colorscheme simplifysimplify-dark
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 set autoindent
 set autoread
@@ -27,16 +27,18 @@ set directory-=.                                             " don't store swapf
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set filetype=on " without this vim emits a zero exit status, later, because of :ft off
-set guifont=Inconsolata:h12
+set guifont=Inconsolata:h14
 set history=50
 set hlsearch                                                 " highlight search
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " do incremental searching
 set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
+set listchars=tab:\ \ ,trail:▫
+" set nolist
 " set listchars=trail:▫
 " set list listchars=tab:»·,trail:·,nbsp:·
-set listchars=tab:▸\ ,trail:·,nbsp:·
+" set listchars=tab:▸\ ,trail:·,nbsp:·
 set nocompatible                                             " don't bother with vi compatibility
 set number                                                   " show line numbers
 set numberwidth=7
@@ -133,6 +135,9 @@ endif
 
 " general key maps
 let mapleader = ','
+imap ;; <Esc>                                         " Two semicolons for maps to escape
+imap <C-l> <Esc>                                      " Ctrl + l maps to escape
+
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 
 " silver searcher, ack
@@ -155,6 +160,10 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 map <leader>a :cclose<CR>
 
+" map go to definition
+autocmd FileType go nmap <g-d> <C-]>
+autocmd FileType go nmap <g-b> <C-o>
+
 " in case you forgot to sudo
 " cnoremap w!! %!sudo tee > /dev/null %
 
@@ -173,6 +182,7 @@ autocmd BufLeave * set nocursorline
 
 " vim-go specific settings
 let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
