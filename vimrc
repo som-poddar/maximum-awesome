@@ -15,7 +15,7 @@ set ruler                                                 " show the cursor posi
 set cursorline                                            " enable horizontal line
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
-colorscheme basic-dark
+colorscheme base16-railscasts
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 set autoindent
 set autoread
