@@ -15,7 +15,7 @@ set ruler                                                 " show the cursor posi
 set cursorline                                            " enable horizontal line
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
-colorscheme simplifysimplify-dark
+colorscheme basic-dark
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 set autoindent
 set autoread
@@ -41,7 +41,7 @@ set listchars=tab:\ \ ,trail:▫
 " set listchars=tab:▸\ ,trail:·,nbsp:·
 set nocompatible                                             " don't bother with vi compatibility
 set number                                                   " show line numbers
-set numberwidth=7
+set numberwidth=3
 set relativenumber
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
