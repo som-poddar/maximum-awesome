@@ -65,13 +65,26 @@ call vundle#begin() " install plugins via Vundle
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
+  Plugin 'google/vim-codefmt'
+  Plugin 'google/vim-glaive'
+  Plugin 'google/vim-maktaba'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
+  Plugin 'sbdchd/neoformat'
   Plugin 'scrooloose/nerdtree'
   Plugin 'shougo/neocomplete'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
+call glaive#Install()
+
+" run auto-formatting on save
+augroup autoformat_settings
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  " autocmd FileType java AutoFormatBuffer clang-format
+augroup END
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
@@ -211,7 +224,11 @@ nnoremap <Leader>a :Ack!<Space>
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
+let g:neocomplete#auto_completion_start_length=1
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 1
+
 let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 1
 
