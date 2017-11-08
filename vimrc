@@ -15,7 +15,12 @@ set ruler                                                 " show the cursor posi
 set cursorline                                            " enable horizontal line
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
-colorscheme base16-railscasts
+if has('gui_running')
+  colorscheme base16-railscasts
+else
+  colorscheme colorsbox-stnight
+endif
+
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 set autoindent
 set autoread
@@ -91,7 +96,7 @@ augroup END
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='luna'
 
 " ack settings
 if executable('ag')
