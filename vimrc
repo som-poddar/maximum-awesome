@@ -75,6 +75,12 @@ call vundle#begin() " install plugins via Vundle
   Plugin 'shougo/neocomplete'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'chiel92/vim-autoformat'
+  Plugin 'terryma/vim-multiple-cursors'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'junegunn/seoul256.vim'
+  Plugin 'junegunn/seoul256.vim'
+  Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 call glaive#Install()
 
