@@ -62,25 +62,22 @@ set rtp+=~/.vim/plugged/neocomplete.vim/
 call vundle#begin() " install plugins via Vundle
   Plugin 'airblade/vim-gitgutter'
   Plugin 'ajh17/VimCompletesMe'
+  Plugin 'chiel92/vim-autoformat'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
   Plugin 'google/vim-codefmt'
   Plugin 'google/vim-glaive'
   Plugin 'google/vim-maktaba'
+  Plugin 'junegunn/seoul256.vim'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
   Plugin 'sbdchd/neoformat'
   Plugin 'scrooloose/nerdtree'
   Plugin 'shougo/neocomplete'
+  Plugin 'terryma/vim-multiple-cursors'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
-  Plugin 'chiel92/vim-autoformat'
-  Plugin 'terryma/vim-multiple-cursors'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'junegunn/seoul256.vim'
-  Plugin 'junegunn/seoul256.vim'
-  Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 call glaive#Install()
 
