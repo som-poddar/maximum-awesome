@@ -1,3 +1,9 @@
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
+set foldlevelstart=1
+
 set colorcolumn=+1
 set cursorline                                            " highlight current line
 set expandtab
@@ -16,7 +22,7 @@ set cursorline                                            " enable horizontal li
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 if has('gui_running')
-  colorscheme base16-railscasts
+  colorscheme basic-dark
 else
   colorscheme colorsbox-stnight
 endif
@@ -91,12 +97,18 @@ augroup autoformat_settings
   autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  " autocmd FileType java AutoFormatBuffer clang-format
+  autocmd FileType java AutoFormatBuffer clang-format
 augroup END
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='luna'
+
+" whitespace preference
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype go setlocal ts=4 sts=4 sw=4
 
 " ack settings
 if executable('ag')
