@@ -1,0 +1,122 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+  name = Som Poddar
+  email = spoddar@gopro.com
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = simple
+[color]
+  ui = auto
+[alias]
+  aa = add --all
+  ap = add --patch
+  brs = ls-remote --heads origin
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ca = commit --amend -v
+  ci = commit -v
+  co = checkout
+  st = status
+  rd = rebase develop -i
+  ra = rebase --abort
+  rc = rebase --continue
+  l  = log --oneline --decorate --graph
+  lo = log --pretty=oneline --abbrev-commit --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)'
+  lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
+  put = push origin HEAD -u
+  note = log --oneline --no-merges
+[core]
+  editor = subl -n -w
+  excludesfile = /Users/spoddar/.gitignore_global
+  autocrlf = input
+[diff]
+  tool = default-difftool
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  ff = only
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+# list of all git commands from "git extras"
+# git alias
+# git archive-file
+# git authors
+# git back
+# git bug
+# git bulk
+# git changelog
+# git chore
+# git clear
+# git clear-soft
+# git commits-since
+# git contrib
+# git count
+# git create-branch
+# git delete-branch
+# git delete-merged-branches
+# git delete-submodule
+# git delete-tag
+# git delta
+# git effort
+# git extras
+# git feature
+# git force-clone
+# git fork
+# git fresh-branch
+# git gh-pages
+# git graft
+# git guilt
+# git ignore
+# git ignore-io
+# git info
+# git line-summary
+# git local-commits
+# git lock
+# git locked
+# git merge-into
+# git merge-repo
+# git missing
+# git mr
+# git obliterate
+# git pr
+# git psykorebase
+# git pull-request
+# git reauthor
+# git rebase-patch
+# git refactor
+# git release
+# git rename-branch
+# git rename-tag
+# git repl
+# git reset-file
+# git root
+# git rscp
+# git scp
+# git sed
+# git setup
+# git show-merged-branches
+# git show-tree
+# git show-unmerged-branches
+# git stamp
+# git squash
+# git standup
+# git summary
+# git sync
+# git touch
+# git undo
+# git unlock
