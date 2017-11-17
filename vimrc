@@ -2,7 +2,7 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=0
-set foldlevelstart=1
+set foldlevelstart=0
 
 set colorcolumn=+1
 set cursorline                                            " highlight current line
@@ -22,7 +22,7 @@ set cursorline                                            " enable horizontal li
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 if has('gui_running')
-  colorscheme basic-dark
+  colorscheme base16-railscasts
 else
   colorscheme colorsbox-stnight
 endif
@@ -38,7 +38,7 @@ set directory-=.                                             " don't store swapf
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set filetype=on " without this vim emits a zero exit status, later, because of :ft off
-set guifont=Inconsolata:h14
+set guifont=Roboto\ Mono\ Light:h13
 set history=50
 set hlsearch                                                 " highlight search
 set ignorecase                                               " case-insensitive search
@@ -252,6 +252,8 @@ let g:neocomplete#sources#syntax#min_keyword_length = 1
 let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 1
 
+" tagbar settings
+let g:TagbarSetFoldlevel=0
 
 " gotags support
 let g:tagbar_type_go = {
