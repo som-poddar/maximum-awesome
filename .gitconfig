@@ -5,7 +5,7 @@
 	required = true
 [user]
   name = Som Poddar
-  email = spoddar@gopro.com
+  email = spoddar@elation.com
 [init]
   templatedir = ~/.git_template
 [push]
