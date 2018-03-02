@@ -22,7 +22,7 @@ set cursorline                                            " enable horizontal li
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 if has('gui_running')
-  colorscheme base16-railscasts
+  colorscheme gruvbox
 else
   colorscheme colorsbox-stnight
 endif
@@ -38,7 +38,8 @@ set directory-=.                                             " don't store swapf
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set filetype=on " without this vim emits a zero exit status, later, because of :ft off
-set guifont=Roboto\ Mono\ Light:h13
+set guifont="Source\ Code\ Pro\ ExtraLight:h13"
+set linespace=3
 set history=50
 set hlsearch                                                 " highlight search
 set ignorecase                                               " case-insensitive search
@@ -163,6 +164,9 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" source gvimrc for font
+source ~/.gvimrc
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
@@ -199,7 +203,8 @@ map <leader>a :cclose<CR>
 autocmd FileType go nmap <g-d> <C-]>
 autocmd FileType go nmap <g-b> <C-o>
 
-" in case you forgot to sudo
+" strip any trailing whitespaces for certain types of files
+autocmd FileType c,cpp,java,php,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 " cnoremap w!! %!sudo tee > /dev/null %
 
 " go specific key maps
@@ -250,6 +255,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 1
 
 let g:NERDSpaceDelims=1
+let g:NERDTreeShowHidden=1
 let g:gitgutter_enabled = 1
 
 " tagbar settings
