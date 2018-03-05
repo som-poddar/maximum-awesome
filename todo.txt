@@ -1,0 +1,29 @@
+1. move vim/* out of repo
+2. one makefile to make all symlinks
+3. add a readme that works in Mac & Linux
+4. add a script for symlinking all dotfiles
+5. add spell file here
+
+
+```
+ln -s ~/workspace/tools/maximum-awesome/gitconfig ~/.gitconfig
+ln -s ~/workspace/tools/maximum-awesome/gitignore ~/.gitignore
+
+ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
+ln -s ~/workspace/tools/maximum-awesome/tmux.conf ~/.tmux.conf
+
+ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
+ln -s ~/workspace/tools/maximum-awesome/gvimrc ~/.gvimrc
+ln -s ~/workspace/tools/maximum-awesome/vimrc ~/.vimrc
+ln -s ~/workspace/tools/maximum-awesome/vim/ ~/.vim/
+ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
+
+ln -s ~/workspace/tools/maximum-awesome/profile ~/.profile
+ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
+```
+
+Setup Vundle:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# install vim8 overriding default
+brew install vim --with-override-system-vim --with-lua --with-python3
