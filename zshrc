@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 alias la="ls -al"
 alias ll="ls -l"
 alias ohmyzsh="mvim ~/.oh-my-zsh"
-alias ptr="tree -h --du -t --dirsfirst -c -I 'vendor'-D"
+alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 alias rbc="bundle exec rubocop --format simple --display-cop-names"
 alias sp="source ~/.profile"
 alias zshconfig="mvim ~/.zshrc"

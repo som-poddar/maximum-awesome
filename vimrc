@@ -1,10 +1,10 @@
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
 set foldlevel=0
 set foldlevelstart=0
+set foldmethod=indent " other option is 'syntax'
+set foldnestmax=3
 
 set colorcolumn=+1
+set cursorline                                            " enable horizontal line
 set cursorline                                            " highlight current line
 set expandtab
 set nobackup
@@ -12,46 +12,32 @@ set noswapfile
 set nowrap                                                " no word-wrap
 set nowritebackup
 set ruler                                                 " show the cursor position all the time
-" set shiftround
-" set shiftwidth=2
-" set tabstop=2
-" set textwidth=80
-" set softtabstop=4 shiftwidth=4 expandtab                " indentation level 4 spaces. Tabs are not used
-" set cursorcolumn                                        " enable vertical line
-set cursorline                                            " enable horizontal line
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
-if has('gui_running')
-  colorscheme gruvbox
-else
-  colorscheme colorsbox-stnight
-endif
+colorscheme gruvbox
 
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
+
 set autoindent
 set autoread
-set autowrite                                                " Automatically :write before running commands
-set backspace=2                                              " Fix broken backspace in some setups
-set backupcopy=yes                                           " see :help crontab
-set clipboard=unnamed                                        " yank and paste with the system clipboard
-set directory-=.                                             " don't store swapfiles in the current directory
+set autowrite                                               " Automatically :write before running commands
+set backspace=2                                             " Fix broken backspace in some setups
+set backupcopy=yes                                          " see :help crontab
+set clipboard=unnamed                                       " yank and paste with the system clipboard
+set directory-=.                                            " don't store swapfiles in the current directory
 set encoding=utf-8
-set expandtab                                                " expand tabs to spaces
-set filetype=on " without this vim emits a zero exit status, later, because of :ft off
-set guifont="Source\ Code\ Pro\ ExtraLight:h13"
-set linespace=3
+set expandtab                                               " expand tabs to spaces
+set filetype=on                                             " without this vim emits a zero exit status, later, because of :ft off
+set guifont="Fira\ Code:h14"
 set history=50
-set hlsearch                                                 " highlight search
-set ignorecase                                               " case-insensitive search
-set incsearch                                                " do incremental searching
-set laststatus=2                                             " always show statusline
-set list                                                     " show trailing whitespace
+set hlsearch                                                " highlight search
+set ignorecase                                              " case-insensitive search
+set incsearch                                               " do incremental searching
+set laststatus=2                                            " always show statusline
+set linespace=3
+set list                                                    " show trailing whitespace
 set listchars=tab:\ \ ,trail:▫
-" set nolist
-" set listchars=trail:▫
-" set list listchars=tab:»·,trail:·,nbsp:·
-" set listchars=tab:▸\ ,trail:·,nbsp:·
-set nocompatible                                             " don't bother with vi compatibility
+set nocompatible                                            " don't bother with vi compatibility
 set number                                                   " show line numbers
 set numberwidth=3
 set relativenumber
@@ -65,32 +51,18 @@ set tabstop=8                                                " actual tabs occup
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
+
 syntax enable           " enable syntax highlighting
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 set rtp+=~/.vim/plugged/neocomplete.vim/
 
-call vundle#begin() " install plugins via Vundle
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'ajh17/VimCompletesMe'
-  Plugin 'chiel92/vim-autoformat'
-  Plugin 'ctrlpvim/ctrlp.vim'
-  Plugin 'fatih/vim-go'
-  Plugin 'ggreer/the_silver_searcher'
-  Plugin 'google/vim-codefmt'
-  Plugin 'google/vim-glaive'
-  Plugin 'google/vim-maktaba'
-  Plugin 'junegunn/seoul256.vim'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'sbdchd/neoformat'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'shougo/neocomplete'
-  Plugin 'terryma/vim-multiple-cursors'
-  Plugin 'vim-airline/vim-airline'
-  Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()
+" source external files
+source ~/.gvimrc
+source ~/workspace/tools/maximum-awesome/vimrc.bundles
+
+" glaive for code formatting
 call glaive#Install()
 
 " run auto-formatting on save
@@ -103,13 +75,16 @@ augroup END
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline_theme='tomorrow'
 
 " whitespace preference
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype go setlocal ts=4 sts=4 sw=4
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " ack settings
 if executable('ag')
@@ -127,12 +102,12 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 map <Leader>ct :!ctags -R .<CR>
 
 " Switch between the last two files
-nnoremap <leader><leader> <c-^>
+nnoremap <Leader><Leader> <c-^>
 
 " vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
@@ -145,9 +120,9 @@ set splitbelow
 set splitright
 
 " Quicker window movement
+nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " configure syntastic syntax checking to check on open as well as save
@@ -164,40 +139,39 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" source gvimrc for font
-source ~/.gvimrc
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+" if filereadable($HOME . "/.vimrc.local")
+"  source ~/.vimrc.local
+" endif
 
 " general key maps
 let mapleader = ','
 imap ;; <Esc>                                         " Two semicolons for maps to escape
 imap <C-l> <Esc>                                      " Ctrl + l maps to escape
 
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
+nnoremap <Leader><space> :call whitespace#strip_trailing()<CR>
 
 " silver searcher, ack
-nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader>a :Ag<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <leader>l :Align
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <Leader>] :TagbarToggle<CR>
+nnoremap <Leader>a :Ag<space>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap <Leader>g :GitGutterToggle<CR>
+nnoremap <Leader>t :CtrlP<CR>
+nnoremap <Leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-map <leader>a :cclose<CR>
+noremap <Leader>l :Align
+
+" keymap for quick window
+map <C-N> :cnext<CR>
+map <C-M> :cprevious<CR>
+map <C-a>a :cclose<CR>
+
+" keymap for buffer navigation
+map <C-H> :bnext<CR>
+map <C-L> :bprevious<CR>
 
 " map go to definition
 autocmd FileType go nmap <g-d> <C-]>
@@ -205,18 +179,17 @@ autocmd FileType go nmap <g-b> <C-o>
 
 " strip any trailing whitespaces for certain types of files
 autocmd FileType c,cpp,java,php,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
-" cnoremap w!! %!sudo tee > /dev/null %
 
 " go specific key maps
-autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <Leader>b <Plug>(go-build)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>rn <Plug>(GoRename)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <Leader>r <Plug>(go-run)
+autocmd FileType go nmap <Leader>rn <Plug>(GoRename)
+autocmd FileType go nmap <Leader>t <Plug>(go-test)
 
+" cusorline behavior
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
-
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 " highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
