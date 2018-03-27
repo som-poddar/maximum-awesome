@@ -139,12 +139,6 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-
-" Local config
-" if filereadable($HOME . "/.vimrc.local")
-"  source ~/.vimrc.local
-" endif
-
 " general key maps
 let mapleader = ','
 imap ;; <Esc>                                         " Two semicolons for maps to escape
@@ -165,13 +159,13 @@ nnoremap <Leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 noremap <Leader>l :Align
 
 " keymap for quick window
-map <C-N> :cnext<CR>
-map <C-M> :cprevious<CR>
-map <C-a>a :cclose<CR>
+nnoremap <C-N> :cnext<CR>
+nnoremap <C-M> :cprevious<CR>
+nnoremap <C-a>a :cclose<CR>
 
 " keymap for buffer navigation
-map <C-H> :bnext<CR>
-map <C-L> :bprevious<CR>
+nnoremap <C-]> :bnext<CR>
+nnoremap <C-[> :bprevious<CR>
 
 " map go to definition
 autocmd FileType go nmap <g-d> <C-]>
