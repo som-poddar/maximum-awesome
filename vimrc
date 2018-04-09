@@ -172,7 +172,7 @@ autocmd FileType go nmap <g-d> <C-]>
 autocmd FileType go nmap <g-b> <C-o>
 
 " strip any trailing whitespaces for certain types of files
-autocmd FileType c,cpp,java,php,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,exs,java,php,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " go specific key maps
 autocmd FileType go nmap <Leader>b <Plug>(go-build)
@@ -186,6 +186,9 @@ autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 " highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
+" remove trailing whitespaces before saving
+autocmd BufWritePre * %s/\s\+$//e
 
 " vim-go specific settings
 let g:go_fmt_command = "goimports"
