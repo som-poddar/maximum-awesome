@@ -3,8 +3,7 @@ set foldlevelstart=0
 set foldmethod=indent " other option is 'syntax'
 set foldnestmax=3
 
-set colorcolumn=+1
-set cursorline                                            " enable horizontal line
+set colorcolumn=80
 set cursorline                                            " highlight current line
 set expandtab
 set nobackup
@@ -39,7 +38,7 @@ set list                                                    " show trailing whit
 set listchars=tab:\ \ ,trail:▫
 set nocompatible                                            " don't bother with vi compatibility
 set number                                                   " show line numbers
-set numberwidth=3
+set numberwidth=6
 set relativenumber
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
