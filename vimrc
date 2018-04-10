@@ -3,7 +3,7 @@ set foldlevelstart=0
 set foldmethod=indent " other option is 'syntax'
 set foldnestmax=3
 
-set colorcolumn=80
+set colorcolumn=0  " disable color column for now
 set cursorline                                            " highlight current line
 set expandtab
 set nobackup
