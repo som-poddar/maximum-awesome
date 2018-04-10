@@ -35,8 +35,9 @@ call vundle#begin() " install plugins via Vundle
   Plugin 'sbdchd/neoformat'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
+  Plugin 'severin-lemaignan/vim-minimap'
   Plugin 'sheerun/vim-polyglot'
-  Plugin 'shougo/neocomplete'
+  Plugin 'shougo/deoplete.nvim' " not neocomplete
   Plugin 'slim-template/vim-slim'
   Plugin 'terryma/vim-multiple-cursors'
   Plugin 'tomtom/tlib_vim'
