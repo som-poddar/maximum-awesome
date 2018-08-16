@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/spoddar/workspace/work/src/github.com/crunchyroll/evs-playback-api'
+let g:netrw_dirhist_2='/Users/spoddar/workspace/work/src/github.com/crunchyroll/evs-playback-api/playback-api'
+let g:netrw_dirhist_3='/Users/spoddar/workspace/work/src/github.com/crunchyroll/evs-playback-api'
