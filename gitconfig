@@ -20,6 +20,7 @@
   ca = commit --amend -v
   ci = commit -v
   co = checkout
+  dc = diff --color-word
   st = status
   rd = rebase develop -i
   ra = rebase --abort
@@ -47,7 +48,7 @@
   path = ~/.gitconfig.local
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
