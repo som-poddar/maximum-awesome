@@ -54,11 +54,11 @@ set wildmode=longest,list,full
 syntax enable           " enable syntax highlighting
 syntax on
 
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 set rtp+=~/.vim/plugged/neocomplete.vim/
 
 " source external files
-" source ~/.gvimrc
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
 
 " glaive for code formatting
