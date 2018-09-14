@@ -1,0 +1,20 @@
+# this should be use if the work github account is separate from the
+# personal github account. Place the file at ~/.ssh/config
+
+# work account
+Host github.com
+  HostName github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa
+  User git
+
+
+Host *
+  UseKeychain yes
+
+# personal account
+Host github.com-personal
+  HostName github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_personal
+  User git

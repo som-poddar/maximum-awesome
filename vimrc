@@ -27,7 +27,7 @@ set directory-=.                                            " don't store swapfi
 set encoding=utf-8
 set expandtab                                               " expand tabs to spaces
 set filetype=on                                             " without this vim emits a zero exit status, later, because of :ft off
-set guifont="Fira\ Code:h14"
+set guifont="SF\ Mono:h18"
 set history=50
 set hlsearch                                                " highlight search
 set ignorecase                                              " case-insensitive search
@@ -166,8 +166,8 @@ nnoremap <C-M> :cprevious<CR>
 nnoremap <C-a>a :cclose<CR>
 
 " keymap for buffer navigation
-nnoremap <C-]> :bnext<CR>
-nnoremap <C-[> :bprevious<CR>
+nnoremap <C-ll> :bnext<CR>
+nnoremap <C-hh> :bprevious<CR>
 
 " map go to definition
 autocmd FileType go nmap <g-d> <C-]>
