@@ -9,12 +9,12 @@ tmux split-window   -v -p 30
 
 # window-2
 tmux new-window -t 'code' -a -n 'git'
-tmux split-window -v -p 40
+tmux split-window -v -p 30
 
 # window-3
 tmux new-window -t 'code' -a -n 'shell'
-tmux split-window -h
 
+# wrap-up
 tmux select-window -t 'code':1
 tmux -2 attach -t 'code'
 
