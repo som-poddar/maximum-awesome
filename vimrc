@@ -14,7 +14,6 @@ set ruler                                                 " show the cursor posi
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 colorscheme gruvbox
-
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
 
 set autoindent
@@ -60,9 +59,6 @@ set rtp+=~/.vim/plugged/neocomplete.vim/
 
 " source external files
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
-
-" glaive for code formatting
-call glaive#Install()
 
 " run auto-formatting on save
 augroup autoformat_settings
@@ -130,8 +126,7 @@ nnoremap <C-l> <C-w>l
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
+" dictionary for spelling
 set spelllang=en
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
@@ -186,8 +181,6 @@ autocmd FileType go nmap <Leader>t <Plug>(go-test)
 " cusorline behavior
 autocmd BufEnter * set cursorline
 autocmd BufLeave * set nocursorline
-" highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-" highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 " remove trailing whitespaces before saving
 autocmd BufWritePre * %s/\s\+$//e
