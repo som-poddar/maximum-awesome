@@ -3,11 +3,13 @@
 3. add a readme that works in Mac & Linux
 
 
-ln -s ~/workspace/tools/maximum-awesome/profile ~/.profile
+```
 ln -s ~/workspace/tools/maximum-awesome/gitconfig ~/.gitconfig
 ln -s ~/workspace/tools/maximum-awesome/gitignore ~/.gitignore
-ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
-ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
-ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
-ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/workspace/tools/maximum-awesome/gvimrc ~/.gvimrc
+ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
+ln -s ~/workspace/tools/maximum-awesome/profile ~/.profile
+ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
+ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
+ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
+```
