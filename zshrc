@@ -5,14 +5,13 @@
 export ZSH=/Users/spoddar/.oh-my-zsh
 
 # Themes
-# Chose one of "kolo", "espresso", "elementa", "robbyrussell"
+# chose one of "kolo", "espresso", "elementa", "robbyrussell"
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use case-sensitive completion.
+# uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# uncomment the following line to use hyphen-insensitive completion (_ and - will be interchangeable)
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
@@ -20,26 +19,42 @@ DISABLE_AUTO_TITLE="true"
 
 # Plugins
 plugins=(
-  git
+  # zsh-autosuggestions
+
   aws
   brew
   docker
-  zsh-autosuggestions
+  git
   github
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# aliases
+# aliases #
+
+# generic
 alias la="ls -al"
 alias ll="ls -l"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
-alias rbc="bundle exec rubocop --format simple --display-cop-names"
+
+# dotfiles
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias sp="source ~/.profile"
-alias zshconfig="mvim ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+
+# ruby
+alias rbc="bundle exec rubocop --format simple --display-cop-names"
+
+# git
+alias gd="git diff"
+alias gt="git status"
+
+# golang
+alias gf="gofmt -s -w ."
+alias gl="gofmt -l ."
+
+# tmux
+alias tmi="./$HOME/workspace/tools/maximum-awesome/tmux-init"
