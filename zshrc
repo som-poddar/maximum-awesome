@@ -19,13 +19,12 @@ DISABLE_AUTO_TITLE="true"
 
 # Plugins
 plugins=(
-  # zsh-autosuggestions
-
   aws
   brew
   docker
   git
   github
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -36,13 +35,14 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # aliases #
 
 # generic
+alias dls="ls -al | grep "\->""
 alias la="ls -al"
 alias ll="ls -l"
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
 # dotfiles
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias sp="source ~/.profile"
+alias sp="source ~/.profile; source ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 
 # ruby
@@ -57,4 +57,4 @@ alias gf="gofmt -s -w ."
 alias gl="gofmt -l ."
 
 # tmux
-alias tmi="./$HOME/workspace/tools/maximum-awesome/tmux-init"
+alias tmi="exec ~/.tmux-init"
