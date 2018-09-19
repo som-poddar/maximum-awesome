@@ -35,9 +35,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # aliases #
 
 # generic
-alias dls="ls -al | grep "\->""
 alias la="ls -al"
 alias ll="ls -l"
+alias lsln="ls -al | grep \"\->\""
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
 # dotfiles

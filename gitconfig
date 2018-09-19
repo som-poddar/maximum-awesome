@@ -31,7 +31,7 @@
   note = log --oneline --no-merges
 [core]
   # editor = subl -n -w
-  excludesfile = /Users/spoddar/.gitignore_global
+  excludesfile = /Users/spoddar/.gitignore
   autocrlf = input
 [diff]
   tool = default-difftool

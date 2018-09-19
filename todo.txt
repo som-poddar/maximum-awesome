@@ -13,3 +13,6 @@ ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
 ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
 ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
 ```
+
+
+vim autospelling dictionary

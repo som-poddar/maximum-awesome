@@ -63,7 +63,6 @@ source ~/workspace/tools/maximum-awesome/vimrc.bundles
 " run auto-formatting on save
 augroup autoformat_settings
   autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer clang-format
 augroup END
