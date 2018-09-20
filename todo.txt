@@ -9,7 +9,10 @@ ln -s ~/workspace/tools/maximum-awesome/gitignore ~/.gitignore
 ln -s ~/workspace/tools/maximum-awesome/gvimrc ~/.gvimrc
 ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/workspace/tools/maximum-awesome/profile ~/.profile
+
 ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
+ln -s ~/workspace/tools/maximum-awesome/tmux.conf ~/.tmux.conf
+
 ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
 ln -s ~/workspace/tools/maximum-awesome/vimrc ~/.vimrc
 ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
