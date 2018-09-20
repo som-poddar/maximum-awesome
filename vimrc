@@ -134,8 +134,9 @@ set diffopt+=vertical
 
 " general key maps
 let mapleader = ','
-imap ;; <Esc>                                         " Two semicolons for maps to escape
-imap <C-l> <Esc>                                      " Ctrl + l maps to escape
+
+" Two semicolons for maps to escape
+imap ;; <Esc>
 
 nnoremap <Leader><space> :call whitespace#strip_trailing()<CR>
 
@@ -157,8 +158,8 @@ nnoremap <C-M> :cprevious<CR>
 nnoremap <C-a>a :cclose<CR>
 
 " keymap for buffer navigation
-nnoremap <C-ll> :bnext<CR>
-nnoremap <C-hh> :bprevious<CR>
+nnoremap <C-b><C-l> :bnext<CR>
+nnoremap <C-b><C-h> :bprevious<CR>
 
 " map go to definition
 autocmd FileType go nmap <g-d> <C-]>
