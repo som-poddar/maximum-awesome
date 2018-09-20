@@ -26,6 +26,7 @@ set directory-=.                                            " don't store swapfi
 set encoding=utf-8
 set expandtab                                               " expand tabs to spaces
 set filetype=on                                             " without this vim emits a zero exit status, later, because of :ft off
+
 set guifont="SF\ Mono:h18"
 set history=50
 set hlsearch                                                " highlight search
@@ -36,24 +37,24 @@ set linespace=3
 set list                                                    " show trailing whitespace
 set listchars=tab:\ \ ,trail:▫
 set nocompatible                                            " don't bother with vi compatibility
-set number                                                   " show line numbers
+set number                                                  " show line numbers
 set numberwidth=6
 set relativenumber
-set ruler                                                    " show where you are
-set scrolloff=3                                              " show context above/below cursorline
-set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
-set showcmd       " display incomplete commands
-set smartcase                                                " case-sensitive search if any caps
+set ruler                                                   " show where you are
+set scrolloff=3                                             " show context above/below cursorline
+set shiftwidth=2                                            " normal mode indentation commands use 2 spaces
+set showcmd                                                 " display incomplete commands
+set smartcase                                               " case-sensitive search if any caps
 set t_Co=256
-set tabstop=8                                                " actual tabs occupy 8 characters
+set tabstop=8                                               " actual tabs occupy 8 characters
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
-set wildmenu                                                 " show a navigable menu for tab completion
+set wildmenu                                                " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
-syntax enable           " enable syntax highlighting
+syntax enable                                               " enable syntax highlighting
 syntax on
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+" set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 set rtp+=~/.vim/plugged/neocomplete.vim/
 
@@ -62,13 +63,9 @@ source ~/workspace/tools/maximum-awesome/vimrc.bundles
 
 " run auto-formatting on save
 augroup autoformat_settings
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType c,cpp,javascript,java ClangFormatAutoEnable
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer clang-format
 augroup END
-
-" deoplete settings
-" let g:deoplete#enable_at_startup = 1
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
@@ -168,7 +165,7 @@ autocmd FileType go nmap <g-d> <C-]>
 autocmd FileType go nmap <g-b> <C-o>
 
 " strip any trailing whitespaces for certain types of files
-autocmd FileType c,cpp,exs,java,php,yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,exs,java,php,yaml,go,json,yml,txt autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " go specific key maps
 autocmd FileType go nmap <Leader>b <Plug>(go-build)
