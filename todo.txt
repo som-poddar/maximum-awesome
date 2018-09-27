@@ -14,6 +14,8 @@ ln -s ~/workspace/tools/maximum-awesome/tmux-init ~/.tmux-init
 ln -s ~/workspace/tools/maximum-awesome/tmux.conf ~/.tmux.conf
 
 ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
+
+ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
 ln -s ~/workspace/tools/maximum-awesome/vimrc ~/.vimrc
 ln -s ~/workspace/tools/maximum-awesome/zshrc ~/.zshrc
 ```
@@ -23,3 +25,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 vim autospelling dictionary
+
+
+brew install vim --with-override-system-vim --with-lua --with-python3
