@@ -5,6 +5,7 @@
 
 ```
 ln -s ~/workspace/tools/maximum-awesome/gitconfig ~/.gitconfig
+ln -s ~/workspace/tools/maximum-awesome/gitconfig ~/.gitconfig
 ln -s ~/workspace/tools/maximum-awesome/gitignore ~/.gitignore
 ln -s ~/workspace/tools/maximum-awesome/gvimrc ~/.gvimrc
 ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
