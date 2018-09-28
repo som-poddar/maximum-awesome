@@ -23,6 +23,7 @@ plugins=(
   brew
   docker
   git
+  git-extras
   github
   zsh-autosuggestions
 )

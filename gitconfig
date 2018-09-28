@@ -112,8 +112,8 @@
 # git show-merged-branches
 # git show-tree
 # git show-unmerged-branches
-# git stamp
 # git squash
+# git stamp
 # git standup
 # git summary
 # git sync
