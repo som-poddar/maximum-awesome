@@ -34,8 +34,8 @@ set ignorecase                                              " case-insensitive s
 set incsearch                                               " do incremental searching
 set laststatus=2                                            " always show statusline
 set linespace=3
-set list                                                    " show trailing whitespace
-set listchars=tab:\ \ ,trail:▫
+set nolist                                                  " don't show listchars by default
+set listchars=eol:$,tab:>-,trail:▫,extends:>,precedes:<
 set nocompatible                                            " don't bother with vi compatibility
 set number                                                  " show line numbers
 set numberwidth=6

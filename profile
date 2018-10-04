@@ -1,6 +1,7 @@
 # set gopath
+# export GOPATH=$HOME/workspace/opensource
+# export GOPATH=$GOPATH:$HOME/workspace/personal
 export GOPATH=$HOME/workspace/work
-# export GOPATH=$HOME/workspace/work:$HOME/workspace/opensource:$HOME/workspace/personal
 
 # set goroot
 export GOROOT=/usr/local/opt/go/libexec
