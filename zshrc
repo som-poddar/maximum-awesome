@@ -57,5 +57,9 @@ alias gt="git status"
 alias gf="gofmt -s -w ."
 alias gl="gofmt -l ."
 
+# makefile
+alias mb="make build"
+alias mr="make run"
+
 # tmux
 alias tmi="exec ~/.tmux-init"

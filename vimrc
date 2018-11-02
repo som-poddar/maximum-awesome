@@ -61,10 +61,17 @@ set rtp+=~/.vim/plugged/neocomplete.vim/
 " source external files
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
 
+" autoformat
+" map <c-f> :call JsonBeautify()<cr>
+
 " run auto-formatting on save
 augroup autoformat_settings
   autocmd FileType c,cpp,javascript,java ClangFormatAutoEnable
-  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+  autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+  autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+  autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+  autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 augroup END
 
 " airline settings
