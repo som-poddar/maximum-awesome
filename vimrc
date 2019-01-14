@@ -8,13 +8,15 @@ set cursorline                                            " highlight current li
 set expandtab
 set nobackup
 set noswapfile
-set nowrap                                                " no word-wrap
+" set nowrap                                                " no word-wrap
 set nowritebackup
 set ruler                                                 " show the cursor position all the time
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
 
 colorscheme gruvbox
+
 filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
+filetype plugin on
 
 set autoindent
 set autoread
@@ -56,7 +58,7 @@ syntax on
 
 " set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
-set rtp+=~/.vim/plugged/neocomplete.vim/
+" set rtp+=~/.vim/plugged/neocomplete.vim/
 
 " source external files
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
@@ -73,6 +75,9 @@ augroup autoformat_settings
   autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
   autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 augroup END
+
+" auto complete
+let g:deoplete#enable_at_startup = 1
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
@@ -91,6 +96,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+let g:ack_default_options = ' -s -H --nocolor --nogroup --column --smart-case --follow'
 
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
@@ -130,7 +136,8 @@ let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " dictionary for spelling
-set spelllang=en
+set spell
+set spelllang=en_us
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
@@ -218,18 +225,66 @@ nnoremap <Leader>a :Ack!<Space>
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:neocomplete#auto_completion_start_length=1
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 1
+
+" neocomplete
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
+
+" Path to python interpreter for neovim
+let g:python3_host_prog  = '/usr/local/bin/python3'
+" Skip the check of neovim module
+let g:python3_host_skip_check = 1
+
+" Run deoplete.nvim automatically
+let g:deoplete#enable_at_startup = 1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+
+" let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
+" I"|let g:neocomplete#auto_completion_start_length=1
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
+" // let g:neocomplete#sources#syntax#min_keyword_length = 1
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 let g:NERDSpaceDelims=1
 let g:NERDTreeShowHidden=1
 let g:gitgutter_enabled = 1
 
 " tagbar settings
-let g:TagbarSetFoldlevel=0
+let g:TagbarSetFoldlevel=1
 
+" neocomplete
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+" Open go doc in vertical window, horizontal, or tab
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
 " gotags support
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -258,3 +313,66 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Add support for markdown files in tagbar.
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '/Users/spoddar/Library/Python/2.7/lib/python/site-packages/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
+" Goyo
+
+let g:goyo_width = 80 " Leave a few extra chars more than textwidth
+
+function! s:goyo_enter()   " On goyo enter:
+  set noshowcmd            " Don't show last command
+  set noshowmode           " Don't show current mode
+  set scrolloff=999        " Centre current line
+  Limelight                " Enable paragraph focus mode
+  if has('gui_running')
+    set fullscreen         " Enter fullscreen (don't use Mac native fullscreen for this)
+    colo seoul8_light      " Light colours
+    set linespace=7        " Extra leading is better for prose
+  elseif exists('$TMUX')   " Hide tmux bar
+    silent !tmux set status off
+  endif
+  let &l:statusline = '%M' " Show modified state on the bottom of the screen
+                           " This automatically disables on Goyo leave
+  hi StatusLine
+        \ ctermfg=137
+        \ guifg=#be9873
+        \ cterm=NONE
+        \ gui=NONE
+endfunction
+
+function! s:goyo_leave() " On goyo exit:
+  set showcmd            " Show last command
+  set showmode           " Show current mode
+  set scrolloff=1        " Always show one line of context around the cursor
+  Limelight!             " Disable paragraph focus mode
+  if has('gui_running')
+    set nofullscreen     " Exit fullscreen
+    colo seoul8          " Dark colours
+    set linespace=3      " Standard leading
+  elseif exists('$TMUX') " Enable tmux bar
+    silent !tmux set status on
+  endif
+endfunction
+
+" Activate respective function on goyo enter and leave
+" autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
+" autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
+
+" Limelight
+let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
+let g:limelight_priority       = -1 " Don't overrule hlsearch
