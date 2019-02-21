@@ -20,6 +20,7 @@
   ca = commit --amend -v
   ci = commit -v
   co = checkout
+  d = diff --stat .
   l  = log --oneline --decorate --graph
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
   lo = log --pretty=oneline --abbrev-commit --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)'
