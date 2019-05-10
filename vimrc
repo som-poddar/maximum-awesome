@@ -376,3 +376,6 @@ endfunction
 " Limelight
 let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
 let g:limelight_priority       = -1 " Don't overrule hlsearch
+
+" config for plantuml
+let g:plantuml_executable_script='java -jar ~/.vim/bundle/vim-slumlord/plantuml.jar'

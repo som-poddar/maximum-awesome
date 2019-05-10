@@ -1,11 +1,11 @@
 #!/bin/bash
-SESSION=`basename $PWD`
-
 tmux -2 new-session -d -s 'code'
 
 # window-1
 tmux rename-window -t 'code':1 'vim'
-tmux split-window   -v -p 30
+# tmux send-keys -t code:1.1 'cd ~/workspace/work' C-m
+# tmux send-keys -t code:1.2 'cd ~/workspace/work' C-m
+tmux split-window -v -p 30
 
 # window-2
 tmux new-window -t 'code' -a -n 'git'

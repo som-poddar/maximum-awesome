@@ -6,13 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Themes
 # chose one of "kolo", "espresso", "elementa", "robbyrussell"
-ZSH_THEME="robbyrussell"
-
-# uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# uncomment the following line to use hyphen-insensitive completion (_ and - will be interchangeable)
-# HYPHEN_INSENSITIVE="true"
+ZSH_THEME="kolo"
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -25,6 +19,7 @@ plugins=(
   git
   git-extras
   github
+  vi-mode
   zsh-autosuggestions
 )
 
@@ -39,6 +34,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 alias la="ls -al"
 alias ll="ls -l"
 alias lsln="ls -al | grep \"\->\""
+alias gtp="gtypist -e 8%"
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
 # dotfiles
