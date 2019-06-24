@@ -8,7 +8,7 @@ set cursorline                                            " highlight current li
 set expandtab
 set nobackup
 set noswapfile
-" set nowrap                                                " no word-wrap
+set nowrap                                                " no word-wrap
 set nowritebackup
 set ruler                                                 " show the cursor position all the time
 set softtabstop=2                                         " insert mode tab and backspace use 2 spaces
@@ -56,7 +56,6 @@ set wildmode=longest,list,full
 syntax enable                                               " enable syntax highlighting
 syntax on
 
-" set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 " set rtp+=~/.vim/plugged/neocomplete.vim/
 
@@ -110,14 +109,6 @@ map <Leader>ct :!ctags -R .<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
-" vim-rspec mappings
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -143,8 +134,21 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
-" Always use vertical diffs
-set diffopt+=vertical
+" diff mode settings
+" au FilterWritePre * if &diff | colorscheme github | endif
+" if &diff | colorscheme github | set diffopt+=iwhite | set diffopt+=vertical | endif
+" au BufEnter,BufNew * if &diff | colorscheme github |  else | colorscheme gruvbox | endif
+
+command GdiffInTab tabedit %|Gvdiff
+command Gw set diffopt+=iwhite
+
+if &diff
+  colorscheme github
+  set diffopt+=iwhite
+  set diffopt+=vertical
+  set guifont="SF\ Mono:h24"
+  set nowrap
+endif
 
 " general key maps
 let mapleader = ','
@@ -161,6 +165,9 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>d :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>g :GitGutterToggle<CR>
+nnoremap <Leader>gg :GdiffInTab <CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>t :CtrlP<CR>
 nnoremap <Leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
@@ -333,6 +340,7 @@ let g:tagbar_type_markdown = {
 " Goyo
 
 let g:goyo_width = 80 " Leave a few extra chars more than textwidth
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 function! s:goyo_enter()   " On goyo enter:
   set noshowcmd            " Don't show last command

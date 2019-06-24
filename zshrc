@@ -15,10 +15,12 @@ DISABLE_AUTO_TITLE="true"
 plugins=(
   aws
   brew
+  colored-man-pages
   docker
   git
   git-extras
   github
+  jira
   vi-mode
   zsh-autosuggestions
 )
@@ -45,6 +47,13 @@ alias zshconfig="vim ~/.zshrc"
 # ruby
 alias rbc="bundle exec rubocop --format simple --display-cop-names"
 
+# jira
+export JIRA_URL="https://ellation.atlassian.net"
+export JIRA_NAME="spoddar"
+export JIRA_PREFIX=""
+export JIRA_RAPID_BOARD="true"
+# export JIRA_DEFAULT_ACTION=""
+
 # git
 alias gd="git diff"
 alias gt="git status"
@@ -57,5 +66,9 @@ alias gl="gofmt -l ."
 alias mb="make build"
 alias mr="make run"
 
+# history
+alias hs="history -E"
+
 # tmux
 alias tmi="exec ~/.tmux-init"
+export HISTTIMEFORMAT="%d/%m/%y %T "

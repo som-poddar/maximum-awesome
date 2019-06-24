@@ -21,6 +21,7 @@
   ci = commit -v
   co = checkout
   d = diff --stat .
+  dd = difftool
   l  = log --oneline --decorate --graph
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
   lo = log --pretty=oneline --abbrev-commit --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)'
@@ -35,9 +36,11 @@
   excludesfile = $HOME/.gitignore
   autocrlf = input
 [diff]
-  tool = default-difftool
-[difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  tool = vimdiff
+[difftool]
+  prompt = false
+# [difftool "default-difftool"]
+#  cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
   ff = only
 [fetch]
@@ -45,10 +48,10 @@
 [rebase]
   autosquash = true
 [include]
-  path = ~/.gitconfig.local
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
+#  path = ~/.gitconfig.local
+#[difftool "sourcetree"]
+#  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#  path =
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
