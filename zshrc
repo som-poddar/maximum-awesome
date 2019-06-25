@@ -57,6 +57,7 @@ export JIRA_RAPID_BOARD="true"
 # git
 alias gd="git diff"
 alias gt="git status"
+alias gs="smerge ." # require sublime merge
 
 # golang
 alias gf="gofmt -s -w ."

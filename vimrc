@@ -1,7 +1,7 @@
 set foldlevel=0
 set foldlevelstart=0
 set foldmethod=indent " other option is 'syntax'
-set foldnestmax=3
+set foldnestmax=7
 
 set colorcolumn=0  " disable color column for now
 set cursorline                                            " highlight current line
