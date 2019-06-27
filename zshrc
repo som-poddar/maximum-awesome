@@ -39,6 +39,9 @@ alias lsln="ls -al | grep \"\->\""
 alias gtp="gtypist -e 8%"
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
+# ranger
+alias rg="ranger"
+
 # dotfiles
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias sp="source ~/.profile; source ~/.oh-my-zsh"
