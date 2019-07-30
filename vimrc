@@ -57,25 +57,26 @@ syntax enable                                               " enable syntax high
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
-" set rtp+=~/.vim/plugged/neocomplete.vim/
-
-" source external files
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
+Glaive codefmt plugin[mappings]
+Glaive codefmt google_java_executable="java -jar ~/bin/google-java-format"
+Glaive codefmt clang_format_style="google"
 
 " autoformat
 " map <c-f> :call JsonBeautify()<cr>
 
 " run auto-formatting on save
 augroup autoformat_settings
-  autocmd FileType c,cpp,javascript,java ClangFormatAutoEnable
-  autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-  autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-  autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-  autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-  autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
 augroup END
 
-" auto complete
 let g:deoplete#enable_at_startup = 1
 
 " airline settings
@@ -139,8 +140,8 @@ set complete+=kspell
 " if &diff | colorscheme github | set diffopt+=iwhite | set diffopt+=vertical | endif
 " au BufEnter,BufNew * if &diff | colorscheme github |  else | colorscheme gruvbox | endif
 
-command GdiffInTab tabedit %|Gvdiff
-command Gw set diffopt+=iwhite
+" command GdiffInTab tabedit %|Gvdiff
+" command Gw set diffopt+=iwhite
 
 if &diff
   colorscheme github
@@ -174,7 +175,7 @@ nnoremap <Leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 noremap <Leader>l :Align
 
 " keymap for quick window
-nnoremap <C-N> :cnext<CR>
+nnoremap <C-B> :cnext<CR>
 nnoremap <C-M> :cprevious<CR>
 nnoremap <C-a>a :cclose<CR>
 
@@ -186,7 +187,7 @@ nnoremap <C-b><C-h> :bprevious<CR>
 autocmd FileType go nmap <g-d> <C-]>
 autocmd FileType go nmap <g-b> <C-o>
 
-" strip any trailing whitespaces for certain types of files
+" strip any trailing white-spaces for certain types of files
 autocmd FileType c,cpp,exs,java,php,yaml,go,json,yml,txt autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " go specific key maps

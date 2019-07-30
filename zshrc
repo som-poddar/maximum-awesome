@@ -33,10 +33,11 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # aliases #
 
 # generic
+alias gtp="gtypist -e 8%"
 alias la="ls -al"
+alias lc="leetcode"
 alias ll="ls -l"
 alias lsln="ls -al | grep \"\->\""
-alias gtp="gtypist -e 8%"
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
 # ranger
