@@ -15,6 +15,7 @@ ln -s ~/workspace/tools/maximum-awesome/tmux.conf ~/.tmux.conf
 ln -s ~/workspace/tools/maximum-awesome/vimrc.local ~/.vimrc.local
 ln -s ~/workspace/tools/maximum-awesome/gvimrc ~/.gvimrc
 ln -s ~/workspace/tools/maximum-awesome/vimrc ~/.vimrc
+ln -s ~/workspace/tools/maximum-awesome/vim/ ~/.vim/
 ln -s ~/workspace/tools/maximum-awesome/jsbeautifyrc ~/.jsbeautifyrc
 
 ln -s ~/workspace/tools/maximum-awesome/profile ~/.profile
