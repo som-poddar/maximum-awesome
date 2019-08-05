@@ -15,7 +15,8 @@ set softtabstop=2                                         " insert mode tab and 
 
 colorscheme gruvbox
 
-filetype plugin indent on " ensure ftdetect et al work by including this after the Vundle stuff
+" ensure ftdetect et al work by including this after the Vundle stuff
+filetype plugin indent on
 filetype plugin on
 
 set autoindent
@@ -59,7 +60,7 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
 Glaive codefmt plugin[mappings]
-Glaive codefmt google_java_executable="java -jar /bin/google-java-format.jar"
+Glaive codefmt google_java_executable="java -jar $HOME/bin/google-java-format.jar"
 Glaive codefmt clang_format_style="google"
 
 " autoformat
@@ -103,6 +104,9 @@ set wildmode=list:longest,list:full
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+" remap :w to <leader>w in insert mode
+nnoremap ww :w<CR>
 
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
