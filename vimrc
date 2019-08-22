@@ -73,7 +73,8 @@ augroup autoformat_settings
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType html,css,sass,scss,less AutoFormatBuffer js-beautify
+  " autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
 augroup END
@@ -105,8 +106,8 @@ set wildmode=list:longest,list:full
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" remap :w to <leader>w in insert mode
-nnoremap ww :w<CR>
+" remap mw to <leader>w in insert mode
+nnoremap mw :w<CR>
 
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
