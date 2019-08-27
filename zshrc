@@ -43,37 +43,42 @@ alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 # ranger
 alias rg="ranger"
 
-# dotfiles
+## docker
+# remove stopped containers
+alias drmc="docker rm \$(docker ps -a -q -f status=exited)"
+# remove all images
+alias drmi="docker image prune -a"
+
+## dotfiles
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias sp="source ~/.profile; source ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 
-# ruby
+## ruby
 alias rbc="bundle exec rubocop --format simple --display-cop-names"
 
-# jira
+## jira
 export JIRA_URL="https://ellation.atlassian.net"
 export JIRA_NAME="spoddar"
 export JIRA_PREFIX=""
 export JIRA_RAPID_BOARD="true"
-# export JIRA_DEFAULT_ACTION=""
 
-# git
+## git
 alias gd="git diff"
 alias gt="git status"
 alias gs="smerge ." # require sublime merge
 
-# golang
+## golang
 alias gf="gofmt -s -w ."
 alias gl="gofmt -l ."
 
-# makefile
+## makefile
 alias mb="make build"
 alias mr="make run"
 
-# history
+## history
 alias hs="history -E"
 
-# tmux
+## tmux
 alias tmi="exec ~/.tmux-init"
 export HISTTIMEFORMAT="%d/%m/%y %T "

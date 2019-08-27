@@ -14,6 +14,7 @@ call vundle#begin()
   " Plugin 'vim-ruby/vim-ruby'
   " Plugin 'zchee/deoplete-go'
 
+  Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'airblade/vim-gitgutter'
@@ -34,5 +35,6 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
+
 call vundle#end()
 call glaive#Install()

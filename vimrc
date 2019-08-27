@@ -210,18 +210,21 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * %s/\s\+$//e
 
 " vim-go specific settings
-let g:go_fmt_command = "goimports"
+let g:go_def_mode='gopls'
 let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
+let g:go_info_mode='gopls'
 
-" silver searcher, ack
+" Ack
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
+" silversearcher
 " keymap for silversearcher
 " ?    a quick summary of these keys, repeat to close
 " o    to open (same as Enter)
@@ -240,18 +243,20 @@ nnoremap <Leader>a :Ack!<Space>
 let g:ctrlp_match_window = 'order:ttb,max:20'
 
 " neocomplete
-" neocomplete like
 set completeopt+=noinsert
+
 " deoplete.nvim recommend
 set completeopt+=noselect
 
 " Path to python interpreter for neovim
 let g:python3_host_prog  = '/usr/local/bin/python3'
+
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
+
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
