@@ -124,5 +124,3 @@
 # git touch
 # git undo
 # git unlock
-[commit]
-	template = /Users/spoddar/.gitmessage.template
