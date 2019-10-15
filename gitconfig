@@ -6,8 +6,6 @@
 [user]
   name = Som Poddar
   email = som.poddar@gmail.com
-[init]
-  templatedir = ~/.git_template
 [push]
   default = simple
 [color]
@@ -126,4 +124,4 @@
 # git undo
 # git unlock
 [commit]
-	template = /Users/spoddar/.gitmessage.template
+        # template = $HOME/.gitmessage.template

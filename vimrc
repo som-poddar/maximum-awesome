@@ -60,7 +60,7 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
 source ~/workspace/tools/maximum-awesome/vimrc.bundles
 Glaive codefmt plugin[mappings]
-Glaive codefmt google_java_executable="java -jar bin/google-java-format.jar"
+Glaive codefmt google_java_executable="java -jar /Users/sp/bin/google-java-format.jar"
 Glaive codefmt clang_format_style="google"
 
 " autoformat
@@ -261,6 +261,29 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
+" ALE
+nmap <LEADER>af :ALEFix<CR>
+let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_save = 1
+let g:ale_set_loclist = 1
+
+let g:ale_fixers = {
+\  'ruby': [
+\    'remove_trailing_lines',
+\    'trim_whitespace',
+\    'rubocop'
+\  ]
+\}
+
+let g:ale_linters = {'ruby': ['rubocop', 'ruby']}
+let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+let g:ruby_indent_assignment_style = 'variable'
+
+" vim-ruby
+let g:ruby_indent_access_modifier_style = 'normal'
+let g:ruby_indent_assignment_style = 'variable'
+let g:ruby_indent_block_style = 'do'
+set shell=/bin/zsh
 
 " let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
 " I"|let g:neocomplete#auto_completion_start_length=1

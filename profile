@@ -18,3 +18,5 @@ export AWS_FUZZ_USER="centos"
 export AWS_FUZZ_KEY_PATH="~/.ssh/id_rsa"
 export AWS_FUZZ_PRIVATE_IP='true' # Delete this one if you want to use public IP's
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

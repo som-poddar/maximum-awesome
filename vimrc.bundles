@@ -1,11 +1,4 @@
 call vundle#begin()
-  " Plugin 'Valloric/YouCompleteMe'
-  " Plugin 'rking/ag.vim'
-  " Plugin 'scrooloose/syntastic'
-  " Plugin 'sheerun/vim-polyglot'
-  " Plugin 'tpope/vim-ragtag'
-  " Plugin 'tpope/vim-surround'
-
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'airblade/vim-gitgutter'
@@ -31,5 +24,6 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'vim-ruby/vim-ruby'
+  Plugin 'w0rp/ale'
 call vundle#end()
 call glaive#Install()
