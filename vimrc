@@ -58,9 +58,10 @@ syntax enable                                               " enable syntax high
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
-source ~/workspace/tools/maximum-awesome/vimrc.bundles
+source ~./vimrc.bundles
+
 Glaive codefmt plugin[mappings]
-Glaive codefmt google_java_executable="java -jar $HOME/bin/google-java-format.jar"
+Glaive codefmt google_java_executable="java -jar /Users/sp/bin/google-java-format.jar"
 Glaive codefmt clang_format_style="google"
 
 " autoformat
@@ -74,7 +75,7 @@ augroup autoformat_settings
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less AutoFormatBuffer js-beautify
-  " autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
 augroup END

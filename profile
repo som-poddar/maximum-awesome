@@ -13,8 +13,11 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/Users/spoddar/Library/Python/2.7/bin
 export PATH=$PATH:/Users/spoddar/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/sbin
+
 # setting for 'aws-fuzzy'
 export AWS_FUZZ_USER="centos"
 export AWS_FUZZ_KEY_PATH="~/.ssh/id_rsa"
 export AWS_FUZZ_PRIVATE_IP='true' # Delete this one if you want to use public IP's
 
+# settings for Vim
+export VIMHOME="~/workspace/src/bitbucket.com/som-poddar/maximum-awesome"

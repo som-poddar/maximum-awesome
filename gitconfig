@@ -7,7 +7,7 @@
   name = Som Poddar
   email = som.poddar@gmail.com
 [init]
-  templatedir = ~/.git_template
+  # templatedir = ~/.git_template
 [push]
   default = simple
 [color]
@@ -32,7 +32,7 @@
   rd = rebase develop -i
   st = status
 [core]
-  # editor = subl -n -w
+  editor = subl -n -w
   excludesfile = $HOME/.gitignore
   autocrlf = input
 [diff]
@@ -125,4 +125,4 @@
 # git undo
 # git unlock
 [commit]
-	template = /Users/spoddar/.gitmessage.template
+        # template = /Users/spoddar/.gitmessage.template

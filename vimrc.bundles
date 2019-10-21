@@ -1,8 +1,5 @@
 call vundle#begin()
   " Plugin 'Valloric/YouCompleteMe'
-  " Plugin 'google/vim-codefmt'
-  " Plugin 'google/vim-glaive'
-  " Plugin 'google/vim-maktaba'
   " Plugin 'maksimr/vim-jsbeautify'
   " Plugin 'rking/ag.vim'
   " Plugin 'scrooloose/syntastic'
@@ -14,7 +11,6 @@ call vundle#begin()
   " Plugin 'vim-ruby/vim-ruby'
   " Plugin 'zchee/deoplete-go'
 
-  Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'airblade/vim-gitgutter'
@@ -28,6 +24,7 @@ call vundle#begin()
   Plugin 'junegunn/goyo.vim'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
+  Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'rhysd/vim-clang-format'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/vim-slumlord'
