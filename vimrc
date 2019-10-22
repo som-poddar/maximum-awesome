@@ -58,7 +58,8 @@ syntax enable                                               " enable syntax high
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
-source ~/workspace/tools/maximum-awesome/vimrc.bundles
+source ~/.vimrc.bundles
+
 Glaive codefmt plugin[mappings]
 Glaive codefmt google_java_executable="java -jar /bin/google-java-format.jar"
 Glaive codefmt clang_format_style="google"
