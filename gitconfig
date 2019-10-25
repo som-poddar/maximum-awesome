@@ -23,25 +23,26 @@
   l  = log --oneline --decorate --graph
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
   lo = log --pretty=oneline --abbrev-commit --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)'
+  ls = log --name-status
   note = log --oneline --no-merges
   put = push origin HEAD -u
   ra = rebase --abort
   rc = rebase --continue
   rd = rebase develop -i
-  st = status
+  s = status
 [core]
   # editor = subl -n -w
   excludesfile = $HOME/.gitignore
   autocrlf = input
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
   prompt = false
 # [difftool "default-difftool"]
 #  cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
   ff = only
-	tool = vimdiff
+  tool = vimdiff
 [fetch]
   prune = true
 [rebase]
