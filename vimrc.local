@@ -10,9 +10,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='solarized dark'
 
-highlight  CursorLine ctermbg=Yellow ctermfg=None                         " Default Colors for CursorLine
-autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red     " Change Color when entering Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None   " Revert Color to default when leaving Insert Mode
+" highlight  CursorLine ctermbg=Yellow ctermfg=None                         " Default Colors for CursorLine
+" autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red     " Change Color when entering Insert Mode
+" autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None   " Revert Color to default when leaving Insert Mode
 
 " keyboard shortcuts
 inoremap jj <ESC>
