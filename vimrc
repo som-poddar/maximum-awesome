@@ -57,7 +57,7 @@ set wildmode=longest,list,full
 syntax enable                                               " enable syntax highlighting
 syntax on
 
-set rtp+=~/.vim/bundle/Vundle.vim  " configure Vundle
+set rtp+=~/.vim/bundle/vundle.vim  " configure Vundle
 source ~/.vimrc.bundles
 source ~/.vimrc.local
 
