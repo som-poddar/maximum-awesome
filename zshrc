@@ -40,6 +40,9 @@ alias ll="ls -l"
 alias lsln="ls -al | grep \"\->\""
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
+# icloud
+alias cio="cd ~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org"
+
 # ranger
 alias rg="ranger"
 
