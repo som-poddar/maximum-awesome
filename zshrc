@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Themes
 # chose one of "kolo", "espresso", "elementa", "robbyrussell"
-ZSH_THEME="kolo"
+ZSH_THEME="kardan" # blinks"
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -22,7 +22,6 @@ plugins=(
   github
   jira
   vi-mode
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -82,3 +81,4 @@ alias hs="history -E"
 ## tmux
 alias tmi="exec ~/.tmux-init"
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export PATH="/usr/local/sbin:$PATH"
