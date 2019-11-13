@@ -1,3 +1,6 @@
+syntax enable                                             " enable syntax highlighting
+syntax on
+
 set foldlevel=0
 set foldlevelstart=0
 set foldmethod=indent " other option is 'syntax'
@@ -53,9 +56,6 @@ set tabstop=8                                               " actual tabs occupy
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                " show a navigable menu for tab completion
 set wildmode=longest,list,full
-
-syntax enable                                               " enable syntax highlighting
-syntax on
 
 set rtp+=~/.vim/bundle/vundle.vim  " configure Vundle
 source ~/.vimrc.bundles

@@ -3,7 +3,7 @@ set hlsearch            " highlight search
 set nowrap              " no word-wrap
 set autowrite
 
-Glaive codefmt google_java_executable="java -jar /Users/spoddar/bin/google-java-format.jar"
+Glaive codefmt google_java_executable="java -jar /usr/local/bin/google-java-format.jar"
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -54,7 +54,3 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>rn <Plug>(GoRename)
 
-" code-folding
-syntax on
-set foldmethod=syntax
-set foldnestmax=10
