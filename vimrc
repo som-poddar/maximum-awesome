@@ -2,7 +2,7 @@ syntax enable                                             " enable syntax highli
 syntax on
 
 set foldlevel=0
-set foldlevelstart=0
+set foldlevelstart=1
 set foldmethod=indent " other option is 'syntax'
 set foldnestmax=7
 
@@ -95,9 +95,9 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " ack settings
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+"if executable('ag')
+"  let g:ackprg = 'ag --vimgrep'
+"endif
 
 let g:ack_default_options = ' -s -H --nocolor --nogroup --column --smart-case --follow'
 
@@ -299,6 +299,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:syntastic_cloudformation_checkers = ['cfn_lint']
 
 " Open go doc in vertical window, horizontal, or tab
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>

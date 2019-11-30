@@ -1,7 +1,6 @@
 call vundle#begin()
   " Plugin 'maksimr/vim-jsbeautify'
   " Plugin 'rking/ag.vim'
-  " Plugin 'scrooloose/syntastic'
   " Plugin 'sheerun/vim-polyglot'
   " Plugin 'shougo/deoplete.nvim', { 'do': 'make'}
   " Plugin 'tpope/vim-ragtag'
@@ -29,7 +28,9 @@ call vundle#begin()
   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'rhysd/vim-clang-format'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
   Plugin 'scrooloose/vim-slumlord'
+  Plugin 'speshak/vim-cfn'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'vim-airline/vim-airline'
