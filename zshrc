@@ -17,6 +17,7 @@ plugins=(
   brew
   colored-man-pages
   docker
+  fzf-zsh
   git
   git-extras
   github
@@ -39,6 +40,11 @@ alias ll="ls -l"
 alias lsln="ls -al | grep \"\->\""
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
+# navigation
+alias cde="cd ~/workspace/personal/src/bitbucket.com/som-poddar/everything/"
+alias cdn="cd ~/workspace/personal/src/bitbucket.com/som-poddar/notes"
+alias cdw="cd ~/workspace/work/src/github.com/crunchyroll/"
+
 # icloud
 alias cio="cd ~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org"
 
@@ -53,7 +59,8 @@ alias drmi="docker image prune -a"
 
 ## dotfiles
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias sp="source ~/.profile; source ~/.oh-my-zsh"
+# alias sp="source ~/.profile; source ~/.oh-my-zsh; source ~/.zshrc ;source ~/.vimrc source ~/.tmux"
+alias sp="source ~/.profile; source ~/.oh-my-zsh; source ~/.zshrc"
 alias zshconfig="vim ~/.zshrc"
 
 ## ruby
@@ -66,9 +73,10 @@ export JIRA_PREFIX=""
 export JIRA_RAPID_BOARD="true"
 
 ## git
+alias gcm="git checkout master;git pull"
 alias gd="git diff"
-alias gt="git status"
 alias gs="smerge ." # require sublime merge
+alias gt="git status"
 
 ## golang
 alias gf="gofmt -s -w ."

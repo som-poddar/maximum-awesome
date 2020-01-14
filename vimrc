@@ -58,6 +58,8 @@ set wildmenu                                                " show a navigable m
 set wildmode=longest,list,full
 
 set rtp+=~/.vim/bundle/vundle.vim  " configure Vundle
+set rtp+=/usr/local/opt/fzf   " use fzf (installed via homebrew)
+
 source ~/.vimrc.bundles
 source ~/.vimrc.local
 
