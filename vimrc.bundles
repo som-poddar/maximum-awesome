@@ -1,4 +1,6 @@
 call vundle#begin()
+  " Plugin 'jceb/vim-orgmode'
+  " Plugin 'jszakmeister/markdown2ctags'
   " Plugin 'maksimr/vim-jsbeautify'
   " Plugin 'rking/ag.vim'
   " Plugin 'sheerun/vim-polyglot'
@@ -10,22 +12,19 @@ call vundle#begin()
   " Plugin 'vim-ruby/vim-ruby'
   " Plugin 'zchee/deoplete-go'
 
-  Plugin 'godlygeek/tabular'
-  Plugin 'plasticboy/vim-markdown'
-
   Plugin 'airblade/vim-gitgutter'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
+  Plugin 'godlygeek/tabular'
   Plugin 'google/vim-codefmt'
   Plugin 'google/vim-glaive'
   Plugin 'google/vim-maktaba'
-  Plugin 'jceb/vim-orgmode'
-  Plugin 'jszakmeister/markdown2ctags'
   Plugin 'junegunn/goyo.vim'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+  Plugin 'plasticboy/vim-markdown'
   Plugin 'rhysd/vim-clang-format'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'

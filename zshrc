@@ -40,6 +40,11 @@ alias ll="ls -l"
 alias lsln="ls -al | grep \"\->\""
 alias ptr="tree -h --du -t --dirsfirst -c -I vendor -D"
 
+# curl
+alias curl="curl -s"
+
+# file
+alias trim="LC_CTYPE=C LANG=C find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i '' -E \"s/[[:space:]]*$//\""
 # navigation
 alias cde="cd ~/workspace/personal/src/bitbucket.com/som-poddar/everything/"
 alias cdn="cd ~/workspace/personal/src/bitbucket.com/som-poddar/notes"
@@ -93,3 +98,4 @@ alias hs="history -E"
 alias tmi="exec ~/.tmux-init"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"

@@ -96,6 +96,8 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
+" foldsetting preference
+autocmd Syntax c,cpp,vim,go,json,javascript,ruby,xml,html,xhtml,perl normal zM
 " ack settings
 "if executable('ag')
 "  let g:ackprg = 'ag --vimgrep'
