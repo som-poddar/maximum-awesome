@@ -4,8 +4,8 @@
   process = git-lfs filter-process
   required = true
 [user]
-  name = Som Poddar
-  email = som.poddar@gmail.com
+	name = Som Poddar
+	email = som.poddar@gmail.com
 [init]
   # templatedir = ~/.git_template
 [push]
@@ -33,7 +33,7 @@
   st = status
 [core]
   editor = subl -n -w
-  excludesfile = $HOME/.gitignore
+	excludesfile = /Users/spoddar/.gitignore_global
   autocrlf = input
 [diff]
   tool = vimdiff
@@ -53,8 +53,8 @@
 #  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 #  path =
 [mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 # list of all git commands from "git extras"
 # git alias
@@ -126,3 +126,6 @@
 # git unlock
 [commit]
         # template = /Users/spoddar/.gitmessage.template
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 

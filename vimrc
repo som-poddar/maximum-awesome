@@ -170,7 +170,10 @@ imap ;; <Esc>
 nnoremap <Leader><space> :call whitespace#strip_trailing()<CR>
 
 " silver searcher, ack
-nnoremap <Leader>] :TagbarToggle<CR>
+nnoremap <Leader>tt :TagbarOpenAutoClose<CR>
+" nnoremap tc :TagbarSetFoldlevel 0<CR>
+"  nnoremap to :TagbarSetFoldlevel 10<CR>
+
 nnoremap <Leader>a :Ag<space>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>d :NERDTreeToggle<CR>
