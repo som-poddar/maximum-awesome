@@ -23,7 +23,7 @@ filetype plugin indent on
 filetype plugin on
 
 set autoindent
-set autoread
+set autoread wildmode=longest,list,full
 set autowrite                                               " Automatically :write before running commands
 set backspace=2                                             " Fix broken backspace in some setups
 set backupcopy=yes                                          " see :help crontab
@@ -371,8 +371,6 @@ function! s:goyo_enter()   " On goyo enter:
     set fullscreen         " Enter fullscreen (don't use Mac native fullscreen for this)
     colo seoul8_light      " Light colours
     set linespace=7        " Extra leading is better for prose
-  elseif exists('$TMUX')   " Hide tmux bar
-    silent !tmux set status off
   endif
   let &l:statusline = '%M' " Show modified state on the bottom of the screen
                            " This automatically disables on Goyo leave
@@ -392,18 +390,14 @@ function! s:goyo_leave() " On goyo exit:
     set nofullscreen     " Exit fullscreen
     colo seoul8          " Dark colours
     set linespace=3      " Standard leading
-  elseif exists('$TMUX') " Enable tmux bar
-    silent !tmux set status on
   endif
 endfunction
 
 " Activate respective function on goyo enter and leave
-" autocmd! vimrc User GoyoEnter nested call <sid>goyo_enter()
-" autocmd! vimrc User GoyoLeave nested call <sid>goyo_leave()
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Limelight
 let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
 let g:limelight_priority       = -1 " Don't overrule hlsearch
 
-" config for plantuml
-let g:plantuml_executable_script='java -jar ~/.vim/bundle/vim-slumlord/plantuml.jar'

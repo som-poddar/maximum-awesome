@@ -1,12 +1,8 @@
 call vundle#begin()
-  " Plugin 'jceb/vim-orgmode'
-  " Plugin 'jszakmeister/markdown2ctags'
   " Plugin 'maksimr/vim-jsbeautify'
-  " Plugin 'rking/ag.vim'
   " Plugin 'sheerun/vim-polyglot'
   " Plugin 'shougo/deoplete.nvim', { 'do': 'make'}
   " Plugin 'tpope/vim-ragtag'
-  " Plugin 'tpope/vim-surround'
   " Plugin 'tpope/vim-surround'
   " Plugin 'valloric/youcompleteme'
   " Plugin 'vim-ruby/vim-ruby'
@@ -20,12 +16,16 @@ call vundle#begin()
   Plugin 'google/vim-codefmt'
   Plugin 'google/vim-glaive'
   Plugin 'google/vim-maktaba'
+  Plugin 'jceb/vim-orgmode'
+  Plugin 'jszakmeister/markdown2ctags'
   Plugin 'junegunn/goyo.vim'
+  Plugin 'junegunn/limelight.vim'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'plasticboy/vim-markdown'
   Plugin 'rhysd/vim-clang-format'
+  Plugin 'rking/ag.vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'scrooloose/vim-slumlord'
@@ -34,8 +34,9 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'vim-pandoc/vim-pandoc'
+  Plugin 'vim-pandoc/vim-pandoc-syntax'
   Plugin 'vundlevim/vundle.vim'
   Plugin 'xuyuanp/nerdtree-git-plugin'
-
 call vundle#end()
 call glaive#Install()
