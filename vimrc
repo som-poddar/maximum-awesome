@@ -36,6 +36,9 @@ set filetype=on                                             " without this vim e
 set guifont="SF\ Mono:h18"
 set history=50
 set hlsearch                                                " highlight search
+" set hi Search guibg=LightBlue
+" ADD spacebar to clear hlssearch
+" add linting using VIML lint
 set ignorecase                                              " case-insensitive search
 set incsearch                                               " do incremental searching
 set laststatus=2                                            " always show statusline
@@ -396,6 +399,9 @@ endfunction
 " Activate respective function on goyo enter and leave
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Limelight
 let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
