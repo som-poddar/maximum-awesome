@@ -13,6 +13,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/Users/spoddar/Library/Python/2.7/bin
 export PATH=$PATH:/Users/spoddar/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/.vim/bundle/vim-superman/bin
 
 # setting for 'aws-fuzzy'
 export AWS_FUZZ_USER="centos"

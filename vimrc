@@ -181,7 +181,7 @@ nnoremap <Leader>a :Ag<space>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>d :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
-nnoremap <Leader>g :GitGutterToggle<CR>
+nnoremap <Leader>gt :GitGutterToggle<CR>
 nnoremap <Leader>gg :GdiffInTab <CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gb :Gblame<CR>
@@ -189,6 +189,10 @@ nnoremap <Leader>t :CtrlP<CR>
 nnoremap <Leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 noremap <Leader>l :Align
+
+" autocomplete for python
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " keymap for quick window
 nnoremap <C-B> :cnext<CR>
@@ -310,6 +314,9 @@ let g:go_highlight_build_constraints = 1
 
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 let g:syntastic_cloudformation_checkers = ['cfn_lint']
+
+" remove unwanted whitespaces
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Open go doc in vertical window, horizontal, or tab
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>

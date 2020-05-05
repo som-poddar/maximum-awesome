@@ -26,6 +26,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+compdef vman="man"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -50,6 +51,7 @@ alias trim="LC_CTYPE=C LANG=C find . -not \( -name .svn -prune -o -name .git -pr
 alias cde="cd ~/workspace/personal/src/bitbucket.com/som-poddar/everything/"
 alias cdn="cd ~/workspace/personal/src/bitbucket.com/som-poddar/notes"
 alias cdw="cd ~/workspace/work/src/github.com/crunchyroll/"
+alias cdp="cd ~/workspace/work/src/github.com/crunchyroll/evs-playback-api"
 
 # icloud
 alias cio="cd ~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org"

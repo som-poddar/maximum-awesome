@@ -17,12 +17,14 @@ call vundle#begin()
   Plugin 'google/vim-glaive'
   Plugin 'google/vim-maktaba'
   Plugin 'jceb/vim-orgmode'
+  Plugin 'jez/vim-superman'
   Plugin 'jszakmeister/markdown2ctags'
   Plugin 'junegunn/goyo.vim'
   Plugin 'junegunn/limelight.vim'
   Plugin 'majutsushi/tagbar'
   Plugin 'mileszs/ack.vim'
   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+  Plugin 'nvie/vim-flake8'
   Plugin 'plasticboy/vim-markdown'
   Plugin 'rhysd/vim-clang-format'
   Plugin 'rking/ag.vim'
@@ -36,7 +38,9 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'vim-pandoc/vim-pandoc'
   Plugin 'vim-pandoc/vim-pandoc-syntax'
+  Plugin 'vim-scripts/indentpython.vim'
   Plugin 'vundlevim/vundle.vim'
   Plugin 'xuyuanp/nerdtree-git-plugin'
+  
 call vundle#end()
 call glaive#Install()
