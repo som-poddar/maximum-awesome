@@ -4,8 +4,8 @@
   process = git-lfs filter-process
   required = true
 [user]
-	name = Som Poddar
-	email = som.poddar@gmail.com
+  name = Som Poddar
+  email = som.poddar@gmail.com
 [init]
   # templatedir = ~/.git_template
 [push]
@@ -20,7 +20,7 @@
   ca = commit --amend -v
   ci = commit -v
   co = checkout
-  d = diff --stat .
+	d = difftool
   dd = difftool
   l  = log --oneline --decorate --graph
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
@@ -33,12 +33,12 @@
   st = status
 [core]
   editor = subl -n -w
-	excludesfile = /Users/spoddar/.gitignore_global
+  excludesfile = /Users/spoddar/.gitignore_global
   autocrlf = input
 [diff]
-  tool = vimdiff
+	tool = vimdiff
 [difftool]
-  prompt = false
+	prompt = false
 # [difftool "default-difftool"]
 #  cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
@@ -53,8 +53,8 @@
 #  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 #  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 # list of all git commands from "git extras"
 # git alias
@@ -127,5 +127,5 @@
 [commit]
         # template = /Users/spoddar/.gitmessage.template
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
