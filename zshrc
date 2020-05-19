@@ -47,6 +47,7 @@ alias curl="curl -s"
 
 # file
 alias trim="LC_CTYPE=C LANG=C find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i '' -E \"s/[[:space:]]*$//\""
+
 # navigation
 alias cde="cd ~/workspace/personal/src/bitbucket.com/som-poddar/everything/"
 alias cdn="cd ~/workspace/personal/src/bitbucket.com/som-poddar/notes"
@@ -54,7 +55,9 @@ alias cdw="cd ~/workspace/work/src/github.com/crunchyroll/"
 alias cdp="cd ~/workspace/work/src/github.com/crunchyroll/evs-playback-api"
 
 # icloud
-alias cio="cd ~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org"
+alias brg="cd ~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org"
+alias cio="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+alias fsn="/Users/spoddar/Library/Mobile\ Documents/iCloud~co~fluder~fsnotes/Documents"
 
 # ranger
 alias rg="ranger"
@@ -67,9 +70,8 @@ alias drmi="docker image prune -a"
 
 ## dotfiles
 alias ohmyzsh="vim ~/.oh-my-zsh"
-# alias sp="source ~/.profile; source ~/.oh-my-zsh; source ~/.zshrc ;source ~/.vimrc source ~/.tmux"
 alias sp="source ~/.profile; source ~/.oh-my-zsh; source ~/.zshrc"
-alias zshconfig="vim ~/.zshrc"
+alias zshc="vim ~/.zshrc"
 
 ## ruby
 alias rbc="bundle exec rubocop --format simple --display-cop-names"
