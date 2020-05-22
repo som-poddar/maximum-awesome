@@ -1,3 +1,9 @@
+
+install ripgrep
+fzf tab completion
+fzf with tmux
+make fzf work with ripgrep
+
 1. move vim/* out of repo
 2. one makefile to make all symlinks
 3. add a readme that works in Mac & Linux

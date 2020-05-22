@@ -17,7 +17,7 @@ plugins=(
   brew
   colored-man-pages
   docker
-  fzf-zsh
+  fzf
   git
   git-extras
   github
