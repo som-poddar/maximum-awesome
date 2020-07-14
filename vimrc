@@ -69,8 +69,8 @@ source ~/.vimrc.local
 Glaive codefmt plugin[mappings]
 Glaive codefmt clang_format_style="google"
 
-" autoformat
-" map <c-f> :call JsonBeautify()<cr>
+" format json using jq
+map <space>f :%!jq '.'<cr>
 
 " run auto-formatting on save
 augroup autoformat_settings
@@ -80,7 +80,7 @@ augroup autoformat_settings
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less AutoFormatBuffer js-beautify
-  autocmd FileType json AutoFormatBuffer js-beautify
+  " autocmd FileType json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
 augroup END
@@ -88,10 +88,10 @@ augroup END
 let g:deoplete#enable_at_startup = 1
 
 " airline settings
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline_theme='tomorrow'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline_theme='tomorrow'
 
 " whitespace preference
 autocmd Filetype go setlocal ts=4 sts=4 sw=4
@@ -368,7 +368,6 @@ let g:tagbar_type_markdown = {
 \ }
 
 " Goyo
-
 let g:goyo_width = 80 " Leave a few extra chars more than textwidth
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
@@ -414,3 +413,58 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:limelight_paragraph_span = 1  " Don't dim one par around the current one
 let g:limelight_priority       = -1 " Don't overrule hlsearch
 
+" lightline settings (going to replace airline)
+let g:lightline = {
+      \   'colorscheme': 'Dracula',
+      \   'active': {
+      \     'left':[ [ 'mode', 'paste' ],
+      \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+      \     ]
+      \   },
+      \   'component': {
+      \     'lineinfo': ' %3l:%-2v',
+      \   },
+      \   'component_function': {
+      \     'gitbranch': 'fugitive#head',
+      \   }
+      \ }
+let g:lightline.separator = {
+      \   'left': '|', 'right': '|'
+      \}
+let g:lightline.subseparator = {
+      \   'left': '|', 'right': '|'
+      \}
+let g:lightline.tabline = {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ }
+
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type = {'buffers': 'tabsel'}
+let g:lightline.bufferline = {'show_number': '2'}
+let g:lightline#bufferline#number_map = {0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+
+" keymap for buffers (go to)
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+
+" keymap for buffers (close)
+nmap <Leader>c1 <Plug>lightline#bufferline#delete(1)
+nmap <Leader>c2 <Plug>lightline#bufferline#delete(2)
+nmap <Leader>c3 <Plug>lightline#bufferline#delete(3)
+nmap <Leader>c4 <Plug>lightline#bufferline#delete(4)
+nmap <Leader>c5 <Plug>lightline#bufferline#delete(5)
+nmap <Leader>c6 <Plug>lightline#bufferline#delete(6)
+nmap <Leader>c7 <Plug>lightline#bufferline#delete(7)
+nmap <Leader>c8 <Plug>lightline#bufferline#delete(8)
+nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
+
+set showtabline=2  " Show tabline
+set guioptions-=e  " Don't use GUI tabline
