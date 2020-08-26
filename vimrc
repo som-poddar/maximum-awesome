@@ -225,6 +225,7 @@ autocmd BufLeave * set nocursorline
 autocmd BufWritePre * %s/\s\+$//e
 
 " vim-go specific settings
+let g:go_auto_sameids = 0
 let g:go_def_mode='gopls'
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
@@ -233,7 +234,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
-let g:go_info_mode='gopls'
+let g:go_info_mode = 'gopls'
 
 " Ack
 cnoreabbrev Ack Ack!
