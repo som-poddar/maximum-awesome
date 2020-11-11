@@ -194,6 +194,9 @@ noremap <Leader>l :Align
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" keymap for save all buffers
+nnoremap <Space>w :wa<CR>
+
 " keymap for quick window
 nnoremap <C-B> :cnext<CR>
 nnoremap <C-M> :cprevious<CR>
