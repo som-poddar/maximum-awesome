@@ -19,14 +19,16 @@ call vundle#begin()
   Plugin 'google/vim-glaive'
   Plugin 'google/vim-maktaba'
   Plugin 'google/yapf'
+  Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plugin 'jceb/vim-orgmode'
   Plugin 'jez/vim-superman'
-  Plugin 'jszakmeister/markdown2ctags'
   Plugin 'junegunn/fzf.vim'
   Plugin 'junegunn/goyo.vim'
   Plugin 'junegunn/limelight.vim'
   Plugin 'liuchengxu/vista.vim'
+  Plugin 'lvht/tagbar-markdown'
   Plugin 'majutsushi/tagbar'
+  Plugin 'mikelue/vim-maven-plugin'
   Plugin 'mileszs/ack.vim'
   Plugin 'neoclide/coc-json'
   Plugin 'neoclide/coc-python'
@@ -49,6 +51,6 @@ call vundle#begin()
   Plugin 'vim-scripts/indentpython.vim'
   Plugin 'vundlevim/vundle.vim'
   Plugin 'xuyuanp/nerdtree-git-plugin'
-  
+
 call vundle#end()
 call glaive#Install()

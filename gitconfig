@@ -20,7 +20,7 @@
   ca = commit --amend -v
   ci = commit -v
   co = checkout
-	d = difftool
+  d = difftool
   dd = difftool
   l  = log --oneline --decorate --graph
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(yellow)%d%C(reset)' --all
@@ -36,9 +36,9 @@
   excludesfile = /Users/spoddar/.gitignore_global
   autocrlf = input
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 # [difftool "default-difftool"]
 #  cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
