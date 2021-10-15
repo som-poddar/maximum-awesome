@@ -4,7 +4,7 @@
 export GOPATH=$HOME/workspace/work
 
 # set goroot
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/opt/go@1.16/libexec
 export GOBIN=$GOPATH/bin
 
 # set path
@@ -21,4 +21,4 @@ export AWS_FUZZ_KEY_PATH="~/.ssh/id_rsa"
 export AWS_FUZZ_PRIVATE_IP='true' # Delete this one if you want to use public IP's
 
 # settings for Vim
-export VIMHOME="~/workspace/src/bitbucket.com/som-poddar/maximum-awesome"
+# export VIMHOME="~/workspace/src/bitbucket.com/som-poddar/maximum-awesome"

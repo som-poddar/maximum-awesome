@@ -8,8 +8,11 @@ call vundle#begin()
   " Plugin 'vim-ruby/vim-ruby'
   " Plugin 'zchee/deoplete-go'
 
+  Plugin 'JamshedVesuna/vim-markdown-preview'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'dense-analysis/ale'
+  Plugin 'editorconfig/editorconfig-vim'
   Plugin 'fatih/vim-go'
   Plugin 'ggreer/the_silver_searcher'
   Plugin 'godlygeek/tabular'
@@ -29,6 +32,7 @@ call vundle#begin()
   Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'nvie/vim-flake8'
   Plugin 'plasticboy/vim-markdown'
+  Plugin 'prettier/vim-prettier'
   Plugin 'rhysd/vim-clang-format'
   Plugin 'rking/ag.vim'
   Plugin 'scrooloose/nerdtree'
@@ -40,6 +44,7 @@ call vundle#begin()
   Plugin 'vim-pandoc/vim-pandoc'
   Plugin 'vim-pandoc/vim-pandoc-syntax'
   Plugin 'vim-scripts/indentpython.vim'
+  Plugin 'vimwiki/vimwiki'
   Plugin 'vundlevim/vundle.vim'
   Plugin 'xuyuanp/nerdtree-git-plugin'
 

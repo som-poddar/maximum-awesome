@@ -130,3 +130,5 @@
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
+[pull]
+	rebase = true

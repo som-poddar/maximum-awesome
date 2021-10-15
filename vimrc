@@ -9,6 +9,7 @@ set foldnestmax=7
 set colorcolumn=0  " disable color column for now
 set cursorline                                            " highlight current line
 set expandtab
+set autoread
 set nobackup
 set noswapfile
 set nowrap                                                " no word-wrap
@@ -75,13 +76,13 @@ map <space>f :%!jq '.'<cr>
 " run auto-formatting on save
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less AutoFormatBuffer js-beautify
   " autocmd FileType json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
+  " autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
 augroup END
 
@@ -94,6 +95,7 @@ let g:deoplete#enable_at_startup = 1
 " let g:airline_theme='tomorrow'
 
 " whitespace preference
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd Filetype go setlocal ts=4 sts=4 sw=4
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
@@ -472,3 +474,23 @@ nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
 
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" settings for ale
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'java': ['google_java_format'],
+\    'python': ['yapf'],
+\}
+
+let g:ale_linters = {
+      \   'python': ['pycodestyle', 'flake8', 'pylint'],
+      \   'java':['checkstyle', 'javac', 'javalsp', 'pmd'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+  \ }
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
