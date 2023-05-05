@@ -151,18 +151,12 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 set complete+=kspell
 
 " diff mode settings
-" au FilterWritePre * if &diff | colorscheme github | endif
-" if &diff | colorscheme github | set diffopt+=iwhite | set diffopt+=vertical | endif
-" au BufEnter,BufNew * if &diff | colorscheme github |  else | colorscheme gruvbox | endif
-
 " command GdiffInTab tabedit %|Gvdiff
-" command Gw set diffopt+=iwhite
-
 if &diff
   colorscheme github
   set diffopt+=iwhite
   set diffopt+=vertical
-  set guifont="SF\ Mono:h24"
+  "set guifont="SF\ Mono:h24"
   set nowrap
 endif
 
@@ -376,7 +370,7 @@ let g:tagbar_type_markdown = {
 " Goyo
 let g:goyo_width = 80 " Leave a few extra chars more than textwidth
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
+set statusline+=%-10.3n\                     " buffer number
 function! s:goyo_enter()   " On goyo enter:
   set noshowcmd            " Don't show last command
   set noshowmode           " Don't show current mode
@@ -490,7 +484,7 @@ let g:ale_linters = {
       \   'python': ['pycodestyle', 'flake8', 'pylint'],
       \   'java':['checkstyle', 'javac', 'javalsp', 'pmd'],
       \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
+      \   'javascript': ['eslint', 'flow'],
   \ }
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
