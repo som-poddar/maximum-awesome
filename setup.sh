@@ -26,6 +26,7 @@ ln -s $CONFIGHOME/vimrc ~/.vimrc
 ln -s $CONFIGHOME/vim ~/.vim 
 ln -s $CONFIGHOME/vimrc.bundles ~/.vimrc.bundles 
 ln -s $CONFIGHOME/vimrc.local ~/.vimrc.local 
+ln -s $CONFIGHOME/zshrc ~/.zshrc 
 
 # clone vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

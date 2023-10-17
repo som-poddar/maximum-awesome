@@ -11,7 +11,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/Users/spoddar/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/Users/spoddar/workspace/src/github.com/discoveryinc-dtc/git-history-importer
+# export PATH=$PATH:/Users/spoddar/workspace/src/github.com/discoveryinc-dtc/git-history-importer
 
 # setting for 'aws-fuzzy'
 # export AWS_FUZZ_USER="centos"

@@ -6,6 +6,7 @@ export GOPRIVATE=github.com/HBOCodeLabs/*,github.com/wbd-streaming/*
 export VAULT_ADDR="https://vault.api.hbo.com"
 export OKTA_USERNAME=som_poddar-wm@discovery.com
 export GH_TOKEN=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
+export HOMEBREW_BUNDLE_FILE=/Users/spoddar/workspace/maximum-awesome/brewfile
 
 refresh-submodules() {
   git submodule update --init --recursive

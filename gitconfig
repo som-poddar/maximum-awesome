@@ -32,8 +32,9 @@
   rc = rebase --continue
   rd = rebase develop -i
   st = status
+	last = log -1 HEAD --stat
 [core]
-  editor = subl -n -w
+	editor = code --wait
   excludesfile = /Users/spoddar/.gitignore_global
   autocrlf = input
 [diff]
@@ -132,3 +133,9 @@
   path =
 [pull]
 	rebase = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
