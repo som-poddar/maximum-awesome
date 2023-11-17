@@ -17,12 +17,13 @@ plugins=(
   brew
   colored-man-pages
   docker
-  fzf
+  # fzf
   git
   git-extras
   github
   jira
   vi-mode
+  fzf-zsh-plugin
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,3 +106,4 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN=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
