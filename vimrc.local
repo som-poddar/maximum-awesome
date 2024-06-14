@@ -54,3 +54,11 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>rn <Plug>(GoRename)
 
+" java specific settings
+
+nmap <silent> gd <Plug>(coc-definition)                               " GoTo definition
+nmap <silent> gr <Plug>(coc-references)                               " GoTo references
+nmap <leader>rn <Plug>(coc-rename)                                    " Rename symbol
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>     " Show all errors/warnings
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>        " Kitchen sink of all LSP commands
+nnoremap <silent><nowait> <space><S-s>  :<C-u>CocList -I symbols<cr>  " Fuzzy search for ALL symbols

@@ -30,7 +30,7 @@ call vundle#begin()
   Plugin 'majutsushi/tagbar'
   Plugin 'mengelbrecht/lightline-bufferline'
   Plugin 'mileszs/ack.vim'
-  Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+  Plugin 'neoclide/coc.nvim', {'branch': 'release'}
   Plugin 'nvie/vim-flake8'
   Plugin 'plasticboy/vim-markdown'
   Plugin 'prettier/vim-prettier'
@@ -49,6 +49,8 @@ call vundle#begin()
   Plugin 'vimwiki/vimwiki'
   Plugin 'vundlevim/vundle.vim'
   Plugin 'xuyuanp/nerdtree-git-plugin'
-
+  Plugin 'morhetz/gruvbox'
+  Plugin 'sindrets/diffview.nvim'
+  
 call vundle#end()
 call glaive#Install()

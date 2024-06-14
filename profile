@@ -3,7 +3,7 @@ echo "loading profile"
 export GOPATH=$HOME/workspace
 
 # set goroot
-export GOROOT=/usr/local/opt/go@1.19/libexec
+export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
 
 # set path
