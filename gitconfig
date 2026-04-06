@@ -4,8 +4,9 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-  name = Som Poddar
-  email = som.poddar@gmail.com
+	name = Som Poddar
+	email = som.poddar@wbd.com
+	signingkey = 9AE08A8F71EE460A
 [init]
   # templatedir = ~/.git_template
 [push]
@@ -34,17 +35,18 @@
   st = status
 	last = log -1 HEAD --stat
 [core]
-	editor = code --wait
+	editor = subl -n -w
   excludesfile = /Users/spoddar/.gitignore_global
   autocrlf = input
 [diff]
-	tool = vimdiff
+	tool = smerge
 [difftool]
 	prompt = false
-# [difftool "default-difftool"]
-#  cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "smerge"]
+  cmd = smerge \"$LOCAL\" \"$REMOTE\"
 [merge]
   ff = only
+	tool = smerge
 [fetch]
   prune = true
 [rebase]
@@ -127,10 +129,8 @@
 # git undo
 # git unlock
 [commit]
+	gpgsign = true
         # template = /Users/spoddar/.gitmessage.template
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
 [pull]
 	rebase = true
 [credential "https://github.com"]
@@ -139,5 +139,3 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/local/bin/gh auth git-credential
-[credential]
-	helper = manager-core
