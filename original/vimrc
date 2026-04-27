@@ -1,4 +1,4 @@
-set t_Co=256
+" set t_Co=256
 syntax enable                                             " enable syntax highlighting
 syntax on
 

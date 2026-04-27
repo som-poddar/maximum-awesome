@@ -128,7 +128,7 @@ eval "$(pyenv init -)"
 source $HOME/workspace/assume_role
 source $HOME/workspace/vault_auth
 
-export OKTA_USERNAME="som.poddar@warnermedia.com"
+export OKTA_USERNAME="som.poddar@wbd.com"
 
 # for aws_sso_profile() and aws_launch_console()
 source ~/workspace/src/github.com/wbd-streaming/developer-tools/scripts/aws-helpers.sh
