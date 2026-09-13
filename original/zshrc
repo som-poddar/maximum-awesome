@@ -147,6 +147,3 @@ export KUBECONFIG=$KUBECONFIG:$(find $HOME/.kube/wbd -name '*kubeconfig' | xargs
 source <(kubectl completion zsh)
 
 export HOMEBREW_GITHUB_API_TOKEN=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
-
-
-. /usr/local/opt/asdf/libexec/asdf.sh
